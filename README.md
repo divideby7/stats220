@@ -9,4 +9,5 @@ A little about me:
 - I am interested in learning about the variation of data.
 
 A meme that captures how I currently feel about my university studies is
+
 ![](https://c.tenor.com/8druEACXtX8AAAAd/tenor.gif)
