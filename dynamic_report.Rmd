@@ -39,7 +39,7 @@ p {
 
 ## An observation of UoA student's weekly walking steps report
 
-***The data collection of a total number of 21 weeks, showing that UoA student's walking highest steps of each week and what exact day is***
+***The data collection of a total number in weeks, showing that UoA student's walking highest steps of each week and what exact day is***
 
 
 ```{r}
@@ -65,7 +65,7 @@ total <- nrow(lastest_data)
 paste("The first plot showing the data of maximum steps per week, which can see that most of the highest steps are on Tuesday.")
 paste("The second plot showing the day of week that the highest walking steps is and count it")
 paste("The highest recorded steps in a week is",max_ste, "steps.")
-paste("There are",total, "total number of samples, this indicates my data collects from 21 weeks")
+paste("There are",total, "total number of samples")
 ```
 
 
