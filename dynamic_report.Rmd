@@ -1,0 +1,71 @@
+---
+title: My dynamic report
+output: html_fragment
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo=FALSE, message=FALSE, warning=FALSE, error=FALSE)
+
+```
+
+```{css}
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;700&display=swap');
+
+body {
+  font-family: 'Lato', sans-serif;
+  background: #e6f2ff;
+  color: #002244;
+  text-align: center;
+}
+
+h1, h2 {
+  text-transform: uppercase;
+  color: #004080;
+}
+
+h1 {
+  font-size: 32px;
+  border-bottom: 2px solid #66a3ff;
+}
+
+p {
+  font-size: 18px;
+  max-width: 800px;
+  margin: auto;
+}
+
+
+```
+
+## An observation of UoA student's weekly walking steps report
+
+***The data collection of a total number of 21 weeks, showing that UoA student's walking highest steps of each week and what exact day is***
+
+
+```{r}
+library(tidyverse)
+logged_data <- read_csv("https://docs.google.com/spreadsheets/d/e/2PACX-1vSK8rLObAmnEoTyLE56fxVe0dZIgSI72WsHnDIKEY5uhv4FmmJKQ6s2VGrJaIFouK3ivYCX9ktfd43r/pub?gid=1067913358&single=true&output=csv")
+lastest_data <- logged_data %>%
+  rename(average = `Average walking steps in a week`, 
+         max_in_week = `When do you have the most walking steps in a week?`,
+         max_steps = `Highest number of  steps in a week`)
+lastest_data %>%
+  ggplot() +
+  geom_bar(aes(x = max_in_week),
+           fill = "#000000")
+
+lastest_data %>%
+  ggplot() +
+  geom_bar(aes(x = max_steps),
+           fill = "#B2C248")
+
+max_ste <- max(lastest_data$max_steps)
+total <- nrow(lastest_data)
+
+paste("The first plot showing the data of maximum steps per week, which can see that most of the highest steps are on Tuesday.")
+paste("The second plot showing the day of week that the highest walking steps is and count it")
+paste("The highest recorded steps in a week is",max_ste, "steps.")
+paste("There are",total, "total number of samples, this indicates my data collects from 21 weeks")
+```
+
+
