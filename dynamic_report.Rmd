@@ -30,20 +30,23 @@ h1 {
 
 p {
   font-size: 18px;
-  max-width: 900px;
+  max-width: 1100px;
   margin: auto;
 }
 
-
 ```
 
-## An observation of UoA student's weekly walking steps report
+## ***An observation of UoA student's weekly walking steps report***
 
-**The data collection of a total number in weeks, showing that UoA student's walking highest steps of each week and what exact day is**
+*The data collection of a total number in weeks, showing that UoA student's walking highest steps of each week and what exact day is*
 
-**The first plot showing the data of maximum steps per week, which can see that most of the highest steps are on Tuesday**
 
-**The second plot showing the day of week that the highest walking steps is and count it**
+
+*The first plot showing the data of maximum steps per week, which can see that most of the highest steps are on Tuesday.*
+
+
+
+*The second plot showing the day of week that the highest walking steps is and count it*
 
 ```{r}
 library(tidyverse)
@@ -67,7 +70,6 @@ lastest_data %>%
   ggplot() +
   geom_bar(aes(x = max_steps),
            fill = "#B2C248")
-
 
 ```
 
