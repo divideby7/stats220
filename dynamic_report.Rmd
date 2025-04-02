@@ -39,8 +39,11 @@ p {
 
 ## An observation of UoA student's weekly walking steps report
 
-***The data collection of a total number in weeks, showing that UoA student's walking highest steps of each week and what exact day is***
+**The data collection of a total number in weeks, showing that UoA student's walking highest steps of each week and what exact day is**
 
+**The first plot showing the data of maximum steps per week, which can see that most of the highest steps are on Tuesday**
+
+**The second plot showing the day of week that the highest walking steps is and count it**
 
 ```{r}
 library(tidyverse)
@@ -49,6 +52,12 @@ lastest_data <- logged_data %>%
   rename(average = `Average walking steps in a week`, 
          max_in_week = `When do you have the most walking steps in a week?`,
          max_steps = `Highest number of  steps in a week`)
+
+max_ste <- max(lastest_data$max_steps)
+total <- nrow(lastest_data)
+paste("The highest recorded steps in a week is",max_ste, "steps.")
+paste("There are",total, "total number of samples so far")
+
 lastest_data %>%
   ggplot() +
   geom_bar(aes(x = max_in_week),
@@ -59,13 +68,7 @@ lastest_data %>%
   geom_bar(aes(x = max_steps),
            fill = "#B2C248")
 
-max_ste <- max(lastest_data$max_steps)
-total <- nrow(lastest_data)
 
-paste("The first plot showing the data of maximum steps per week, which can see that most of the highest steps are on Tuesday.")
-paste("The second plot showing the day of week that the highest walking steps is and count it")
-paste("The highest recorded steps in a week is",max_ste, "steps.")
-paste("There are",total, "total number of samples")
 ```
 
 
